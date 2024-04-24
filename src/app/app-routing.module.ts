@@ -13,6 +13,10 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
+    path: 'init',
+    component:InitComponent,
+  },
+  {
     path: 'client',
     component: ClientComponent
   },
