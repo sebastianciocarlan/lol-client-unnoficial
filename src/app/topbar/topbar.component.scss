@@ -1,0 +1,27 @@
+@import '../../assets/scss/colors.scss';
+.action-bar{
+    -webkit-user-select: none;
+    -webkit-app-region: drag;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    background-color: $black;
+    color: $ghost-white;
+    width: 100%;
+
+}
+.action-button{
+    font-size: 12px;
+    -webkit-app-region: no-drag;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    margin: 5px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 25px;
+    cursor: pointer;
+}
+.action-button:hover{
+    background-color: #333;
+}

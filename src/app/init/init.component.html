@@ -1,0 +1,13 @@
+<div *ngIf="!isLolChecked" class=" h-100b d-flex flex-column gap-3 align-items-center justify-content-center">
+    <div class="spinner-grow" role="status">
+        
+      </div>
+      <div>Checking if lol is running...</div>
+</div>
+<ng-container *ngIf="isLolChecked && !isLolStarted">
+
+<div  class=" h-100b d-flex  gap-3 align-items-center justify-content-center">
+    <i class="fa-solid fa-circle-exclamation text-danger"></i>
+<div class="text-danger">League of legends is not started. Start it now or let us deal with it.</div>
+<button class="btn btn-primary " >Run League of Legends</button>
+</div></ng-container>
