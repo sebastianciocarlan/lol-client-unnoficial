@@ -56,6 +56,7 @@
     "@angular/router": "17.0.8",
     "@popperjs/core": "2.11.8",
     "bootstrap": "5.3.3",
+    "chart.js": "4.4.2",
     "jquery": "3.7.1",
     "league-connect": "6.0.0-rc12",
     "rxjs": "7.8.1",

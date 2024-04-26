@@ -1,10 +1,5 @@
-<div *ngIf="!endedLoadingAssets" class="h-100b d-flex flex-column gap-3 align-items-center justify-content-center">
-    <div class="progress" role="progressbar" aria-label="Basic example" attr.aria-valuenow="{{this.actualPercentage}}" aria-valuemin="0" aria-valuemax="100">
-        <div class="progress-bar" [style]="'width:'+ this.actualPercentage+'%'"></div>
-      </div>
-      
-</div>
-<div *ngIf="!isLolChecked && endedLoadingAssets" class=" h-100b d-flex flex-column gap-3 align-items-center justify-content-center">
+
+<div *ngIf="!isLolChecked" class=" h-100b d-flex flex-column gap-3 align-items-center justify-content-center">
     <div class="spinner-grow" role="status">
         
       </div>

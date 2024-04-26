@@ -1,18 +1,112 @@
 <div class="h-100b ">
-<app-navbar></app-navbar>
-<div class="h-100c d-flex">
-    <div class="summoner"></div>
-<div class=" sidebar">
-    <div class="user">
-        <div class="user-icon">
-            <img src="../../assets/img/user_placeholder.jpg" alt="" srcset="">
+    <app-navbar></app-navbar>
+    <div class="h-100c d-flex">
+        <div class="summoner overflow-auto">
+            <div class="summoner-container">
+                <div class="d-flex p-5 flex-column gap-3 align-items-center justify-content-center w-100">
+                    <div class="summoner-icon">
+                        <img src="../../assets/img/user_placeholder.jpg" alt="">
+                    </div>
+                    <div class="summoner-name">Summoner Name#tag</div>
+                </div>
+            </div>
+            <div class="data-container">
+                <div class="data-container-title">Most played roles (last 30 days)</div>
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Role</th>
+                            <th scope="col">Games played</th>
+                            <th scope="col">Winrate</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+
+                            <td>Jungle</td>
+                            <td>210</td>
+                            <td>54%</td>
+                        </tr>
+                        <tr>
+
+                            <td>Top</td>
+                            <td>120</td>
+                            <td>53%</td>
+                        </tr>
+                        <tr>
+                            <td>Adc</td>
+                            <td>90</td>
+                            <td>43%</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+            <div class="data-container">
+                <div class="data-container-title">Champion winrate overall</div>
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Champion</th>
+                            <th scope="col">KDA</th>
+                            <th scope="col">Games played</th>
+                            <th scope="col">Winrate</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Gangplank</td>
+                            <td>2.3</td>
+                            <td>110</td>
+                            <td>54%</td>
+                        </tr>
+                        <tr>
+
+                            <td>Gangplank</td>
+                            <td>2.3</td>
+                            <td>110</td>
+                            <td>54%</td>
+                        </tr>
+                        <tr>
+                            <td>Gangplank</td>
+                            <td>2.3</td>
+                            <td>110</td>
+                            <td>54%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="data-container">
+                <div class="data-container-title">Ranked solo/duoQ status</div>
+                <div class="chart-container">
+                    <canvas id="MyChart">{{ chart }}</canvas>
+                </div>
+
+            </div>
+            <div class="data-container">
+                <div class="data-container-title">Recurring players</div>
+            </div>
+
         </div>
-        <div class="user-data">
-            <div class="user-name-text">User</div>
-            <div class="user-status-text">Online</div>
+        <div class=" sidebar">
+            <ng-container *ngFor="let friend of friends">
+                <div *ngIf="friend.availability !== 'offline'" class="user">
+                    <div class="user-icon">
+                        <img src="../../assets/img/user_placeholder.jpg" alt="" srcset="">
+                    </div>
+                    <div class="user-data">
+                        <div class="user-name-text">{{friend.gameName}}</div>
+                        <div *ngIf="friend.availability === 'chat'" class="user-status-text text-primary">Online</div>
+                        <div *ngIf="friend.availability === 'dnd'" class="user-status-text text-success">En partida</div>
+                        <div *ngIf="friend.availability === 'away'" class="user-status-text text-warning">Away</div>
+                        <div  class="user-status-text text-secondary">{{friend.availability}}</div>
+                    </div>
+                  
+                </div>
+            </ng-container>
         </div>
     </div>
-</div>
-</div>
 
 </div>
